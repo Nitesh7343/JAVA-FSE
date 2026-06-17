@@ -9,9 +9,13 @@ public class Spring1Application {
 	@Autowired
 	Function1 f1 = null;
 
+	@Autowired
+	Function2 f2 = null;
+
 	public static void main(String[] args) {
 		SpringApplication.run(Spring1Application.class, args)
 		f1.op1();
+		f2.op2();
 	}
 
 }
