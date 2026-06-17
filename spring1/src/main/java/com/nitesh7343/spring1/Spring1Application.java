@@ -6,10 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Spring1Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Spring1Application.class, args);
+	@Autowired
+	Function1 f1 = null;
 
-		Function1 f1 = new Function1();
+	public static void main(String[] args) {
+		SpringApplication.run(Spring1Application.class, args)
+
 		f1.op1();
 	}
 
