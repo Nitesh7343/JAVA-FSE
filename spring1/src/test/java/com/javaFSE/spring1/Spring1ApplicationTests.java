@@ -1,4 +1,4 @@
-package com.nitesh7343.spring1;
+package com.javaFSE.spring1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
