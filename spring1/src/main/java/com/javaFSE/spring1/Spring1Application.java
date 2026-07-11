@@ -18,7 +18,9 @@ public class Spring1Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		service.pay();
+		NotificationService NS = new SmsNotificationService();
+		NS.send("You have new notification..");
+
 	}
 
 }
