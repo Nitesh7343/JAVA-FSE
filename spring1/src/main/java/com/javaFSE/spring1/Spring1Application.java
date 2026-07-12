@@ -8,8 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Spring1Application implements CommandLineRunner {
 
-	@Autowired
-	PaymentService service;
+	//@Autowired
+	final NotificationService notificationServiceObj;
+
+	public Spring1Application(NotificationService notificationServiceObj) {
+		this.notificationServiceObj = notificationServiceObj;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(Spring1Application.class, args);
@@ -18,8 +22,8 @@ public class Spring1Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		NotificationService NS = new SmsNotificationService();
-		NS.send("You have new notification..");
+		//NS = new SmsNotificationService();
+		notificationServiceObj.send("You have new notification..");
 
 	}
 
