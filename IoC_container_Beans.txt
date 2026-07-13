@@ -1,0 +1,210 @@
+1. What is IoC (Inversion of Control)?
+
+Normally in Java, an object creates the objects it needs.
+
+Example:
+
+class Engine {
+}
+class Car {
+    Engine engine = new Engine();   // Car creates Engine
+}
+
+Here,
+
+* Car controls Engine.
+* Car decides when Engine is created.
+* Objects are tightly coupled.
+
+This is called Traditional Object Creation.
+
+Problem
+
+Imagine Engine has many implementations.
+class PetrolEngine {}
+class DieselEngine {}
+class ElectricEngine {}
+
+Every change requires modifying existing code.
+
+This violates the Open Closed Principle.
+
+What does Spring do?
+
+Spring says:
+
+“Don’t create objects yourself. I’ll create them.”
+
+Now Car only asks for an Engine.
+
+Spring creates the Engine object.
+
+Spring gives it to Car.
+
+This is called
+
+Inversion of Control (IoC)
+
+The control of object creation is inverted from the programmer to the Spring framework.
+
+Definition
+
+Inversion of Control (IoC) is a design principle where the creation, configuration, and lifecycle of objects are managed by the Spring Framework instead of the application code.
+
+without ioc:
+
+Car
+ |
+ |---- creates ----> Engine
+
+
+ with ioc:
+
+           Spring IoC Container
+
+               creates
+                  |
+                  V
+Engine  -----------------> Car
+
+
+
+Benefits
+
+* Loose coupling
+* Easier testing
+* Better maintainability
+* Reusable components
+* Easier object management
+
+
+Real Life Example
+
+Imagine a restaurant.
+
+Without IoC:
+
+You go inside the kitchen and cook yourself.
+
+With IoC:
+
+You simply order food.
+
+The restaurant prepares it and serves you.
+
+You don’t care how it’s made.
+
+Spring works exactly like this.
+
+
+
+2. What is IoC Container?
+
+This is the most important part.
+
+The IoC Container is the heart of Spring.
+
+It is responsible for
+
+* Creating objects
+* Managing objects
+* Injecting dependencies
+* Destroying objects
+* Configuring objects
+
+Simply remember
+
+IoC Container = Object Manager
+
+Definition
+
+The Spring IoC Container is responsible for creating, configuring, assembling, managing, and destroying Spring Beans.
+
+How does it work?
+
+Suppose
+@Component
+class Engine{
+}
+
+@Component
+class Car{
+}
+
+When application starts,
+SpringApplication.run(...)
+
+Spring scans packages.
+
+Finds
+@Component
+@Service
+@Repository
+@Controller
+@Configuration
+
+
+Creates objects.
+
+Stores them.
+
+Those stored objects are called Beans.
+
+
+Application Starts
+
+        |
+
+Spring Boot Starts
+
+        |
+
+Component Scan
+
+        |
+
+Finds @Component
+
+        |
+
+Creates Objects
+
+        |
+
+Stores Objects
+
+        |
+
+Injects Dependencies
+
+        |
+
+Application Ready
+
+Types of IoC Containers
+
+Spring provides two.
+
+BeanFactory
+Basic container.
+
+Features
+
+* Lazy Initialization
+* Lightweight
+* Used rarely today
+
+ApplicationContext
+
+Advanced container.
+
+Used in almost every Spring Boot project.
+
+Provides
+
+* BeanFactory features
+* Event handling
+* AOP support
+* Internationalization
+* Environment properties
+* Resource loading
