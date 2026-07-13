@@ -1,0 +1,18 @@
+Dependency
+
+Suppose:
+class Engine{
+}
+
+class Car{
+
+    Engine engine;
+
+}
+
+Car cannot work without Engine.
+
+Engine is called
+
+Dependency
+
