@@ -208,3 +208,74 @@ Provides
 * Internationalization
 * Environment properties
 * Resource loading
+
+
+3. What is a Bean?
+
+A Bean is simply an object managed by Spring.
+
+Normal Java Object
+Student s = new Student();
+
+
+Spring Bean
+@Component
+class Student{
+
+}
+
+
+Spring creats Student and store in IoC container.
+
+Definition
+
+A Bean is an object instantiated, configured, and managed by the Spring IoC Container.
+
+Bean Life Cycle:
+
+Object Created
+
+↓
+
+Dependencies Injected
+
+↓
+
+@PostConstruct
+
+↓
+
+Bean Ready
+
+↓
+
+Used
+
+↓
+
+@PreDestroy
+
+↓
+
+Destroyed
+
+
+Bean Scopes
+
+Default scope : Singleton
+Only one object in entire application.
+Example:
+UserService
+Object Count = 1
+
+Prototype : @Scope("prototype")
+Every request gets a new object.
+
+Other scopes
+
+* Request
+* Session
+* Application
+* WebSocket
+
+Mostly used in web applications.
