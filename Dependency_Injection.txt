@@ -73,4 +73,81 @@ Done By
 IoC Container
 
 
+Types of Dependency Injection
+Spring supports three types.
+
+1 Constructor Injection ⭐⭐⭐ (Recommended)
+@Component
+class Engine{
+
+}
+
+@Component
+class Car{
+
+    private final Engine engine;
+
+    public Car(Engine engine){
+        this.engine = engine;
+    }
+
+}
+
+Spring automatically injects Engine.
+No need for @Autowired
+
+Advantages
+
+* Recommended
+* Immutable dependency
+* Easy testing
+* Prevents NullPointerException
+* Best practice
+
+
+2 Setter Injection
+@Component
+class Car{
+
+    private Engine engine;
+
+    @Autowired
+    public void setEngine(Engine engine){
+        this.engine = engine;
+    }
+
+}
+
+Useful when dependency is optional.
+
+Advantages
+
+* Optional dependency
+* Can change dependency later
+
+Disadvantages
+
+* Object can remain incomplete
+* Mutable
+
+3 Field Injection
+@Component
+class Car{
+
+    @Autowired
+    private Engine engine;
+
+}
+
+Easy But Not recommended.
+
+Why?
+* Difficult testing
+* Reflection
+* Hidden dependency
+* Cannot make field final
+
+
+
+
 
