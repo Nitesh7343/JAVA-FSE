@@ -279,3 +279,43 @@ Other scopes
 * WebSocket
 
 Mostly used in web applications.
+
+
+How to Create Beans?
+
+Method 1 - Using Component
+@Component
+class Student{
+
+}
+
+Method 2 - Service
+@Service
+class PaymentService{
+
+}
+
+Method 3 - Repository
+@Repository
+class UserRepository{
+
+}
+
+
+Method 4 - Controller
+@Controller
+class HomeController{
+
+}
+
+Method 5 - Configuration
+@Configuration
+class Config{
+
+    @Bean
+    public Student student(){
+        return new Student();
+    }
+
+}
+
