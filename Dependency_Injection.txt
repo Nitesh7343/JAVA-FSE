@@ -16,3 +16,61 @@ Engine is called
 
 Dependency
 
+What is Dependency Injection?
+
+Instead of creating Engine yourself,
+
+Someone else gives Engine to Car.
+
+That someone is Spring.
+
+
+Definition:
+Dependency Injection is the process by which the Spring IoC Container provides the required objects (dependencies) to another object.
+
+Without DI:
+class Car{
+
+    Engine engine = new Engine();
+
+}
+
+Tightly Coupled......
+
+With DI:
+
+class Car{
+
+    Engine engine;
+
+    Car(Engine engine){
+        this.engine = engine;
+    }
+
+}
+
+Spring creates Engine.
+
+Spring injects Engine.
+
+Relationship
+
+IoC
+   |
+
+Implemented Using
+
+   |
+
+Dependency Injection
+
+   |
+
+Done By
+
+   |
+
+IoC Container
+
+
+
