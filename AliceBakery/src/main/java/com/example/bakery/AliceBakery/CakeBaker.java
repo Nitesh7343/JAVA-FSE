@@ -11,7 +11,7 @@ public class CakeBaker {
     }
 
     public void bake() {
-        System.out.print("Cake is baked with " + frosting.getFrostingType() + " " + syrup.getSyrupType());
+        System.out.print("Cake is baked with " + frosting.getFrostingType() + " " + syrup.getSyrupType()+ ", ");
         System.out.println("Enjoy Your Cake");
     }
 }

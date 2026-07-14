@@ -17,8 +17,14 @@ public class AliceBakeryApplication implements CommandLineRunner {
 
 		CakeBaker cake2 = factory.create("strawberryFrosting","chocolateSyrup");
 
+		CakeBaker cake3 = factory.create("strawberryFrosting","strawberrySyrup");
+
+		CakeBaker cake4 = factory.create("chocolateFrosting","strawberrySyrup");
+
 		cake1.bake();
 		cake2.bake();
+		cake3.bake();
+		cake4.bake();
 	}
 
 	public static void main(String[] args) {
