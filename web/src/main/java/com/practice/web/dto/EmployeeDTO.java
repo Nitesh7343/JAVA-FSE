@@ -1,92 +1,133 @@
 package com.practice.web.dto;
 
+import lombok.*;
+
 import java.time.LocalDate;
 
-public class EmployeeDTO {
-    private int ID;
-    private String name;
-    private double salary;
-    private String email;
-    private int age;
-    private LocalDate joinDate;
-    private boolean isActive;
+//@Setter
+//@Getter
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@ToString
 
-    public EmployeeDTO(int ID, String name, double salary, String email, int age, LocalDate joinDate, boolean isActive) {
-        this.ID = ID;
-        this.name = name;
-        this.salary = salary;
-        this.email = email;
-        this.age = age;
-        this.joinDate = joinDate;
-        this.isActive = isActive;
+public class EmployeeDTO {
+    private Integer id;
+    private String name;
+    private Double salary;
+    private String email;
+    private Integer age;
+    private LocalDate joinDate;
+    private Boolean active;
+
+    public EmployeeDTO() {
+
     }
 
-    public int getID() {
-        return ID;
+    public Integer getId() {
+
+        return id;
+
+    }
+
+    public void setId(Integer id) {
+
+        this.id = id;
+
     }
 
     public String getName() {
+
         return name;
-    }
 
-    public double getSalary() {
-        return salary;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public LocalDate getJoinDate() {
-        return joinDate;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
     }
 
     public void setName(String name) {
+
         this.name = name;
+
     }
 
-    public void setSalary(double salary) {
+    public Double getSalary() {
+
+        return salary;
+
+    }
+
+    public void setSalary(Double salary) {
+
         this.salary = salary;
+
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public String getEmail() {
+
+        return email;
+
     }
 
     public void setEmail(String email) {
+
         this.email = email;
+
+    }
+
+    public Integer getAge() {
+
+        return age;
+
+    }
+
+    public void setAge(Integer age) {
+
+        this.age = age;
+
+    }
+
+    public LocalDate getJoinDate() {
+
+        return joinDate;
+
     }
 
     public void setJoinDate(LocalDate joinDate) {
+
         this.joinDate = joinDate;
+
     }
 
-    public void setActive(boolean active) {
-        isActive = active;
+    public Boolean getActive() {
+
+        return active;
+
+    }
+
+    public void setActive(Boolean active) {
+
+        this.active = active;
+
     }
 
     @Override
+
     public String toString() {
+
         return "EmployeeDTO{" +
-                "ID=" + ID +
+
+                "id=" + id +
+
                 ", name='" + name + '\'' +
+
                 ", salary=" + salary +
+
                 ", email='" + email + '\'' +
+
                 ", age=" + age +
+
                 ", joinDate=" + joinDate +
-                ", isActive=" + isActive +
+
+                ", active=" + active +
+
                 '}';
+
     }
 }
